@@ -6,3 +6,6 @@ Run clash in docker under [the official instructions](https://github.com/Dreamac
 external-ui: /ui
 ```
 to your `config.yml`.
+
+## TODO
+- [ ] automatically add `external-ui: /ui` to `config.yml` if you don't do
