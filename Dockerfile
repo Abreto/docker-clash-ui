@@ -1,4 +1,4 @@
-ARG CLASH_IMAGE="dreamacro/clash-premium:2021.12.07"
+ARG CLASH_IMAGE="ghcr.io/dreamacro/clash-premium:2021.12.07"
 
 FROM node:lts
 
