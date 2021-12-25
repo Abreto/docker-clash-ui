@@ -1,6 +1,6 @@
 # docker-clash-ui
 
-[![Create and publish a Docker image](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml/badge.svg)](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml)
+[![Build](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml/badge.svg)](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml)
 
 clash with clash-dashboard located at `/ui`.
 
