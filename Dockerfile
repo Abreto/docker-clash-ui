@@ -1,14 +1,22 @@
+ARG CLASH_IMAGE="dreamacro/clash-premium:2021.12.07"
+
 FROM node:lts
 
-WORKDIR /ui
+ARG CLASH_DASHBOARD_VERSION="c27f57eb1fb08f8fa08b7c69fff6f963a0760af5"
 
-RUN git clone https://github.com/Dreamacro/clash-dashboard.git \
-    && cd clash-dashboard \
-    && npm i && npm run build \
-    && cp -R dist/* /ui \
-    && cd /ui && rm -rf clash-dashboard
+WORKDIR /src
 
-FROM dreamacro/clash
+RUN set -ex;\
+    git clone https://github.com/Dreamacro/clash-dashboard.git; \
+    cd clash-dashboard; \
+    git checkout $CLASH_DASHBOARD_VERSION; \
+    npm install -g pnpm; \
+    pnpm install; \
+    pnpm build; \
+    mkdir -p /ui; \
+    cp -R dist/* /ui;
 
-COPY config.yml /root/.config/clash/
+
+FROM $CLASH_IMAGE
+
 COPY --from=0 /ui /ui
