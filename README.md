@@ -2,13 +2,13 @@
 
 [![Build](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml/badge.svg)](https://github.com/tnextday/docker-clash-ui/actions/workflows/release-package.yml)
 
-clash with clash-dashboard located at `/ui`.
+Host (clash-dashboard)[https://github.com/Dreamacro/clash-dashboard] and (yacd)[https://github.com/haishanh/yacd] in docker
 
-Run clash in docker under [the official instructions](https://github.com/Dreamacro/clash/wiki/Run-clash-in-docker), but remember to add one line
-```
-external-ui: /ui
-```
-to your `config.yml`.
+# Get Start
 
-## TODO
-- [ ] automatically add `external-ui: /ui` to `config.yml` if you don't do
+```
+docker run -p 8080:8080 ghcr.io/tnextday/docker-clash-ui
+```
+
+
+open `http://127.0.0.1:8080/ui` or `http://127.0.0.1:8080/yacd`
